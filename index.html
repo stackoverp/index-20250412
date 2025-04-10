@@ -1,0 +1,2702 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <title>⚡️ เติมตลอด ปอด วิเศษ 🏁</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Kanit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #0ea5e9;
+        --primary-dark: #0284c7;
+        --primary-light: #38bdf8;
+        --primary-super-light: #e0f2fe;
+        --success: #10b981;
+        --success-dark: #047857;
+        --danger: #f43f5e;
+        --danger-dark: #be123c;
+        --warning: #f59e0b;
+        --warning-dark: #d97706;
+        --accent: #8b5cf6;
+        --accent-dark: #7c3aed;
+        --bg: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+        --card-bg: rgba(30, 41, 59, 0.8);
+        --text: #f8fafc;
+        --text-light: #cbd5e1;
+        --text-muted: #94a3b8;
+        --border: rgba(148, 163, 184, 0.2);
+        --input-bg: rgba(15, 23, 42, 0.8);
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --glow: 0 0 15px rgba(14, 165, 233, 0.5);
+      }
+
+      [data-theme="light"] {
+        --primary: #0284c7;
+        --primary-dark: #0369a1;
+        --primary-light: #0ea5e9;
+        --primary-super-light: #f0f9ff;
+        --success: #059669;
+        --success-dark: #047857;
+        --danger: #e11d48;
+        --danger-dark: #be123c;
+        --warning: #d97706;
+        --warning-dark: #b45309;
+        --accent: #8b5cf6;
+        --accent-dark: #7c3aed;
+        --bg: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        --card-bg: rgba(255, 255, 255, 0.9);
+        --text: #0f172a;
+        --text-light: #334155;
+        --text-muted: #64748b;
+        --border: rgba(203, 213, 225, 0.6);
+        --input-bg: rgba(248, 250, 252, 0.8);
+        --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+        --glow: 0 0 15px rgba(14, 165, 233, 0.3);
+      }
+
+      * {
+        box-sizing: border-box;
+        transition: background-color 0.3s ease, color 0.3s ease,
+          border-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      html {
+        font-size: 16px;
+      }
+
+      body {
+        font-family: "Sarabun", "Inter", system-ui, -apple-system, sans-serif;
+        padding: clamp(0.5rem, 5vw, 2rem);
+        background: var(--bg);
+        background-size: 300% 300%;
+        animation: gradientBG 30s ease infinite;
+        color: var(--text);
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: clamp(0.875rem, 2vw, 1rem);
+        line-height: 1.6;
+        letter-spacing: 0.01em;
+      }
+
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .card {
+        width: 100%;
+        max-width: clamp(280px, 90vw, 700px);
+        padding: clamp(1.25rem, 5vw, 2.5rem);
+        background: var(--card-bg);
+        border-radius: clamp(16px, 4vw, 24px);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(12px);
+        border: 1px solid var(--border);
+        margin: 0.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(to right, var(--primary), var(--accent));
+        z-index: 1;
+      }
+
+      h2,
+      h3,
+      h4 {
+        font-family: "Kanit", "Sarabun", sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+
+      h2 {
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        font-size: clamp(1.35rem, 5vw, 1.8rem);
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        gap: clamp(0.5rem, 2vw, 0.8rem);
+        flex-wrap: wrap;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(
+          to right,
+          var(--primary),
+          var(--primary-light)
+        );
+        border-radius: 3px;
+      }
+
+      h2 i {
+        color: var(--primary);
+      }
+
+      .theme-toggle {
+        margin-left: auto;
+        background: rgba(148, 163, 184, 0.1);
+        border: none;
+        color: var(--text);
+        font-size: 1.25rem;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .theme-toggle:hover {
+        background: rgba(148, 163, 184, 0.2);
+        transform: rotate(15deg) scale(1.1);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .theme-toggle:active {
+        transform: scale(0.95);
+      }
+
+      label {
+        display: block;
+        margin: 1rem 0 0.3rem;
+        font-weight: 500;
+        color: var(--text);
+      }
+
+      .input-group {
+        position: relative;
+        margin-bottom: 1.5rem;
+      }
+
+      .input-group label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+
+      .input-group label i {
+        color: var(--primary);
+      }
+
+      input,
+      button,
+      textarea,
+      select {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        margin: 0.2rem 0 0.5rem;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        font-size: 1rem;
+        background: var(--input-bg);
+        color: var(--text);
+        outline: none;
+        transition: all 0.3s ease;
+        font-family: inherit;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3);
+        border-color: var(--primary);
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: var(--text-muted);
+        opacity: 0.7;
+      }
+
+      select {
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23bdbdbd%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 1em;
+        padding-right: 2.5rem;
+      }
+
+      input[type="file"] {
+        padding: 0.7rem;
+        background: var(--input-bg);
+        border: 2px dashed var(--border);
+        cursor: pointer;
+      }
+
+      button {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%
+        );
+        color: white;
+        cursor: pointer;
+        font-weight: 600;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        height: 50px;
+        margin-top: 1rem;
+        position: relative;
+        overflow: hidden;
+        font-size: 1.1rem;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-sm), 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      button:hover {
+        background: linear-gradient(
+          135deg,
+          var(--primary-light) 0%,
+          var(--primary) 100%
+        );
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-sm), 0 6px 20px rgba(14, 165, 233, 0.25);
+      }
+
+      button:active {
+        transform: translateY(0);
+        box-shadow: var(--shadow-sm), 0 3px 10px rgba(14, 165, 233, 0.2);
+      }
+
+      button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: 0.5s;
+      }
+
+      button:hover::before {
+        left: 100%;
+      }
+
+      button.loading {
+        pointer-events: none;
+        opacity: 0.8;
+      }
+
+      button .spinner {
+        display: none;
+        animation: spin 1s linear infinite;
+      }
+
+      button.loading .text {
+        display: none;
+      }
+
+      button.loading .spinner {
+        display: inline-block;
+      }
+
+      #log {
+        white-space: pre-wrap;
+        background: var(--input-bg);
+        padding: 1rem;
+        border-radius: 14px;
+        font-family: "Cascadia Code", "Fira Code", "JetBrains Mono", monospace;
+        max-height: 300px;
+        overflow-y: auto;
+        font-size: 0.9rem;
+        color: var(--text);
+        border: 1px solid var(--border);
+        margin-top: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      /* Log entries with improved styling */
+      #log .log-entry {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        animation: fadeIn 0.3s ease-out forwards;
+        opacity: 0;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      #log .log-entry i {
+        flex-shrink: 0;
+        margin-top: 2px;
+        font-size: 1.1rem;
+      }
+
+      #log .log-entry-text {
+        flex-grow: 1;
+      }
+
+      #log .log-entry.success {
+        background: rgba(16, 185, 129, 0.15);
+        border-left: 4px solid var(--success);
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 12px;
+      }
+
+      #log .log-entry.error {
+        background: rgba(244, 63, 94, 0.15);
+        border-left: 4px solid var(--danger);
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 12px;
+      }
+
+      #log .log-entry.info {
+        background: rgba(14, 165, 233, 0.15);
+        border-left: 4px solid var(--primary);
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 12px;
+      }
+
+      #log .log-entry.warning {
+        background: rgba(245, 158, 11, 0.15);
+        border-left: 4px solid var(--warning);
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 12px;
+      }
+
+      .notification-box {
+        padding: 15px;
+        border-radius: 12px;
+        margin: 15px 0;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        background: rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        animation: slideIn 0.5s ease forwards;
+        border: 1px solid var(--border);
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateX(-20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .status-check-btn {
+        background: linear-gradient(
+          135deg,
+          var(--success) 0%,
+          var(--success-dark) 100%
+        );
+        margin: 15px 0;
+        height: 46px;
+        font-size: 0.95rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 12px;
+      }
+
+      .status-check-btn:hover {
+        background: linear-gradient(
+          135deg,
+          var(--success) 30%,
+          var(--success-dark) 100%
+        );
+      }
+
+      .troubleshoot-list {
+        margin-top: 12px;
+        padding-left: 0;
+        list-style-type: none;
+        counter-reset: item;
+      }
+
+      .troubleshoot-list li {
+        margin-bottom: 14px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        position: relative;
+      }
+
+      .troubleshoot-list li::before {
+        content: counter(item);
+        counter-increment: item;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%
+        );
+        color: white;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        font-weight: bold;
+        flex-shrink: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .site-url-display {
+        display: flex;
+        align-items: center;
+        background: var(--input-bg);
+        padding: 14px 16px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        margin: 12px 0;
+        gap: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .site-url-display:hover {
+        border-color: var(--primary);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .site-url-display a {
+        flex-grow: 1;
+        color: var(--primary);
+        text-decoration: none;
+        word-break: break-all;
+        transition: color 0.3s;
+      }
+
+      .site-url-display a:hover {
+        color: var(--primary-light);
+        text-decoration: underline;
+      }
+
+      .project-info {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin: 20px 0;
+      }
+
+      .project-info-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .project-info-item i {
+        width: 20px;
+        text-align: center;
+        color: var(--primary);
+        font-size: 1.1rem;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .success {
+        color: var(--success);
+      }
+      .error {
+        color: var(--danger);
+      }
+      .hidden {
+        display: none;
+      }
+
+      .save-credentials {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin: 1rem 0;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 12px 16px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+      }
+
+      .save-credentials input {
+        width: auto;
+        margin: 0;
+        accent-color: var(--primary);
+        transform: scale(1.2);
+      }
+
+      .dropzone {
+        border: 2px dashed var(--border);
+        border-radius: 16px;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        background: var(--input-bg);
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .dropzone::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(14, 165, 233, 0.05) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+
+      .dropzone:hover {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 1px rgba(14, 165, 233, 0.1);
+        transform: translateY(-3px) scale(1.01);
+      }
+
+      .dropzone:hover::before {
+        opacity: 1;
+      }
+
+      .dropzone i {
+        font-size: 3.5rem;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        display: block;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+      }
+
+      .dropzone:hover i {
+        transform: scale(1.15) translateY(-5px);
+        color: var(--primary-light);
+      }
+
+      .dropzone p {
+        font-size: 1.1rem;
+        margin-top: 0;
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+
+      .dropzone p strong {
+        color: var(--primary);
+        font-weight: 500;
+      }
+
+      .domain-section {
+        background: rgba(14, 165, 233, 0.08);
+        border-radius: 12px;
+        padding: 15px;
+        margin-top: 20px;
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+      }
+
+      .domain-section:hover {
+        background: rgba(14, 165, 233, 0.12);
+        border-color: var(--primary);
+      }
+
+      .domain-section h4 {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--primary);
+      }
+
+      .domain-section .dns-records {
+        background: var(--input-bg);
+        border-radius: 8px;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid var(--border);
+        font-family: "Cascadia Code", "Fira Code", "JetBrains Mono", monospace;
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+
+      .domain-status {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 15px;
+        border-radius: 8px;
+        margin: 10px 0;
+        background: var(--input-bg);
+        border: 1px solid var(--border);
+      }
+
+      .domain-status.success {
+        background: rgba(16, 185, 129, 0.1);
+        border-color: var(--success);
+      }
+
+      .domain-status.error {
+        background: rgba(244, 63, 94, 0.1);
+        border-color: var(--danger);
+      }
+
+      .domain-status.pending {
+        background: rgba(245, 158, 11, 0.1);
+        border-color: var(--warning);
+      }
+
+      .dns-record-item {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed var(--border);
+      }
+
+      .dns-record-item:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .verify-domain-btn {
+        background: linear-gradient(
+          135deg,
+          var(--accent) 0%,
+          var(--accent-dark) 100%
+        );
+        margin-top: 10px;
+        height: 46px;
+      }
+
+      .verify-domain-btn:hover {
+        background: linear-gradient(
+          135deg,
+          var(--accent) 30%,
+          var(--accent-dark) 100%
+        );
+      }
+
+      .collapsible-section {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        margin: 15px 0;
+        overflow: hidden;
+      }
+
+      .collapsible-header {
+        background: var(--input-bg);
+        padding: 15px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+      }
+
+      .collapsible-header:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .collapsible-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding: 0 15px;
+      }
+
+      .collapsible-content.open {
+        max-height: 1000px;
+        padding: 15px;
+      }
+
+      .one-click-deploy {
+        margin-top: 2rem;
+        height: 56px;
+        font-size: 1.2rem;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .one-click-deploy:hover {
+        background: linear-gradient(
+          135deg,
+          var(--primary-light) 0%,
+          var(--primary) 100%
+        );
+        box-shadow: var(--glow), 0 8px 25px rgba(14, 165, 233, 0.4);
+      }
+
+      .border-accent {
+        border-color: var(--primary) !important;
+      }
+
+      .file-list {
+        background: var(--input-bg);
+        border-radius: 14px;
+        padding: 12px;
+        margin-top: 20px;
+        border: 1px solid var(--border);
+        max-height: 150px;
+        overflow-y: auto;
+      }
+
+      .file-item {
+        display: flex;
+        align-items: center;
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--border);
+        animation: fadeIn 0.3s ease forwards;
+        border-radius: 8px;
+        margin-bottom: 5px;
+        transition: all 0.2s ease;
+      }
+
+      .file-item:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .file-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+
+      .file-icon {
+        margin-right: 12px;
+        color: var(--primary);
+        font-size: 1.1rem;
+      }
+
+      .copy-btn {
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 6px 14px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        margin-left: 10px;
+        height: auto;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .copy-btn:hover {
+        background: var(--primary-dark);
+        transform: translateY(-1px);
+        box-shadow: 0 3px 10px rgba(14, 165, 233, 0.2);
+      }
+
+      .copy-btn i {
+        font-size: 0.9rem;
+      }
+
+      .history-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--input-bg);
+        padding: 16px;
+        border-radius: 14px;
+        margin-bottom: 14px;
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+        animation: fadeIn 0.4s ease forwards;
+      }
+
+      .history-item:hover {
+        border-color: var(--primary);
+        box-shadow: var(--shadow-sm);
+        transform: translateY(-2px);
+      }
+
+      .history-item .site-info {
+        flex: 1;
+      }
+
+      .history-item .site-name {
+        font-weight: bold;
+        color: var(--primary);
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+      }
+
+      .history-item .site-url {
+        font-size: 0.85rem;
+        color: var(--text-light);
+        margin: 4px 0;
+        word-break: break-all;
+      }
+
+      .history-item .site-date {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin-top: 5px;
+      }
+
+      .history-item .actions {
+        display: flex;
+        gap: 8px;
+      }
+
+      .history-item .btn {
+        padding: 9px 14px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        cursor: pointer;
+        border: none;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        height: auto;
+        margin: 0;
+        min-width: 80px;
+        justify-content: center;
+      }
+
+      .history-item .update-btn {
+        background: var(--primary);
+      }
+
+      .history-item .update-btn:hover {
+        background: var(--primary-dark);
+        box-shadow: 0 3px 10px rgba(14, 165, 233, 0.2);
+      }
+
+      .history-item .visit-btn {
+        background: var(--success);
+      }
+
+      .history-item .visit-btn:hover {
+        background: var(--success-dark);
+        box-shadow: 0 3px 10px rgba(16, 185, 129, 0.2);
+      }
+
+      .tabbed-section {
+        margin-top: 1.5rem;
+      }
+
+      .tabs {
+        display: flex;
+        gap: 4px;
+        margin-bottom: 1.8rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 1px;
+      }
+
+      .tab {
+        padding: 12px 20px;
+        background: transparent;
+        border: none;
+        border-bottom: 3px solid transparent;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        color: var(--text-light);
+        border-radius: 8px 8px 0 0;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .tab i {
+        font-size: 0.9rem;
+        transition: transform 0.3s ease;
+      }
+
+      .tab:hover {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--text);
+      }
+
+      .tab:hover i {
+        transform: translateY(-2px);
+      }
+
+      .tab.active {
+        color: var(--primary);
+        border-bottom: 3px solid var(--primary);
+        font-weight: 600;
+      }
+
+      .tab.active i {
+        color: var(--primary);
+      }
+
+      .tab-content {
+        display: none;
+        animation: fadeContent 0.3s ease forwards;
+      }
+
+      @keyframes fadeContent {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      #deploy-mode-select {
+        margin-bottom: 1.5rem;
+      }
+
+      #toggle-log-btn {
+        margin: 1.2rem 0;
+        cursor: pointer;
+        display: inline-flex;
+        color: var(--text);
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        transition: all 0.2s ease;
+        border: 1px solid var(--border);
+        font-weight: 500;
+        font-size: 0.95rem;
+      }
+
+      #toggle-log-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--primary);
+        border-color: var(--primary);
+      }
+
+      #toggle-log-btn i {
+        color: var(--primary);
+        font-size: 1rem;
+      }
+
+      #log.hidden {
+        display: none;
+      }
+
+      .toast {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--card-bg);
+        color: var(--text);
+        padding: 16px 20px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        transform: translateX(150%);
+        transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        z-index: 1000;
+        max-width: 350px;
+        border: 1px solid var(--border);
+        backdrop-filter: blur(10px);
+      }
+
+      .toast.show {
+        transform: translateX(0);
+      }
+
+      .toast.success {
+        border-left: 5px solid var(--success);
+      }
+
+      .toast.error {
+        border-left: 5px solid var(--danger);
+      }
+
+      .toast i {
+        font-size: 1.5rem;
+        color: var(--success);
+      }
+
+      .toast.error i {
+        color: var(--danger);
+      }
+
+      .toast-content {
+        flex: 1;
+      }
+
+      .toast-title {
+        font-weight: bold;
+        margin-bottom: 4px;
+        font-size: 1.05rem;
+      }
+
+      .toast-message {
+        color: var(--text-light);
+        font-size: 0.9rem;
+      }
+
+      .toast-close {
+        background: transparent;
+        border: none;
+        color: var(--text-muted);
+        cursor: pointer;
+        font-size: 0.9rem;
+        padding: 5px;
+        margin: 0;
+        height: auto;
+        transition: all 0.2s ease;
+      }
+
+      .toast-close:hover {
+        color: var(--text);
+        transform: scale(1.1);
+      }
+
+      /* Enhanced guide styling */
+      .guide-container {
+        background: rgba(14, 165, 233, 0.08);
+        padding: 20px;
+        border-radius: 14px;
+        margin: 20px 0;
+        border: 1px solid rgba(14, 165, 233, 0.15);
+        position: relative;
+      }
+
+      .guide-container h4 {
+        margin-top: 0;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .guide-container h4 i {
+        font-size: 1.2rem;
+      }
+
+      .guide-steps {
+        padding-left: 10px;
+        list-style-type: none;
+        counter-reset: step;
+      }
+
+      .guide-steps li {
+        position: relative;
+        padding-left: 40px;
+        margin-bottom: 18px;
+        counter-increment: step;
+      }
+
+      .guide-steps li::before {
+        content: counter(step);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30px;
+        height: 30px;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%
+        );
+        border-radius: 50%;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .guide-tips {
+        padding-left: 10px;
+        list-style-type: none;
+        margin-top: 15px;
+      }
+
+      .guide-tips li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 10px;
+      }
+
+      .guide-tips li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: -1px;
+        font-size: 1.8rem;
+        color: var(--primary);
+        line-height: 1;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 480px) {
+        html {
+          font-size: 14px;
+        }
+
+        .card {
+          padding: 1.2rem;
+          border-radius: 12px;
+        }
+
+        h2 {
+          font-size: 1.3rem;
+          margin-bottom: 1.2rem;
+        }
+
+        .tabs {
+          flex-wrap: wrap;
+          gap: 2px;
+        }
+
+        .tab {
+          flex: 1 0 auto;
+          padding: 10px;
+          font-size: 0.85rem;
+          text-align: center;
+        }
+
+        .dropzone {
+          padding: 1.5rem 1rem;
+        }
+
+        .dropzone i {
+          font-size: 2.5rem;
+          margin-bottom: 0.8rem;
+        }
+
+        .dropzone p {
+          font-size: 0.9rem;
+        }
+
+        .input-group {
+          margin-bottom: 1.2rem;
+        }
+
+        input,
+        button,
+        textarea,
+        select {
+          padding: 0.8rem;
+          font-size: 0.95rem;
+        }
+
+        .toast {
+          max-width: 85vw;
+          left: 50%;
+          transform: translateX(-50%) translateY(-100%);
+          right: auto;
+        }
+
+        .toast.show {
+          transform: translateX(-50%) translateY(0);
+        }
+
+        #toggle-log-btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .save-credentials {
+          padding: 10px;
+        }
+      }
+
+      /* Add a subtle animation to the drop area when active */
+      @keyframes pulseBorder {
+        0%,
+        100% {
+          border-color: var(--primary);
+        }
+        50% {
+          border-color: var(--primary-light);
+        }
+      }
+
+      .dropzone.dragover {
+        animation: pulseBorder 1.5s infinite;
+        border-width: 3px;
+        background: rgba(14, 165, 233, 0.05);
+      }
+    </style>
+  </head>
+  <body class="thai-font">
+    <div class="card">
+      <h2>
+        <i class="fas fa-rocket"></i> เติมตลอด ปอดวิเศษ
+        <button class="theme-toggle" onclick="toggleTheme()" title="สลับธีม">
+          <i class="fas fa-moon"></i>
+        </button>
+      </h2>
+
+      <div class="tabbed-section">
+        <div class="tabs">
+          <div class="tab active" onclick="switchTab('new-tab')">
+            <i class="fas fa-plus-circle"></i> สร้างเว็บใหม่
+          </div>
+          <div class="tab" onclick="switchTab('history-tab')">
+            <i class="fas fa-history"></i> ประวัติของฉัน
+          </div>
+          <div class="tab" onclick="switchTab('practice-tab')">
+            <i class="fas fa-book"></i> คู่มือการใช้งาน
+          </div>
+        </div>
+
+        <div id="new-tab" class="tab-content active">
+          <select
+            id="deploy-mode-select"
+            class="hidden"
+            onchange="toggleDeployMode(this.value)"
+          >
+            <option value="new">สร้างเว็บไซต์ใหม่</option>
+            <option value="update">อัพเดทเว็บไซต์เดิม</option>
+          </select>
+
+          <div
+            class="dropzone"
+            id="dropzone"
+            onclick="document.getElementById('fileInput').click()"
+          >
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>
+              ลากวางไฟล์ HTML, CSS, JS ที่นี่<br /><strong
+                >หรือคลิกเพื่อเลือกไฟล์</strong
+              >
+            </p>
+            <input
+              id="fileInput"
+              type="file"
+              multiple
+              class="hidden"
+              onchange="handleFiles(this.files)"
+            />
+          </div>
+        </div>
+
+        <div id="history-tab" class="tab-content">
+          <h3><i class="fas fa-history"></i> ประวัติการสร้างเว็บไซต์</h3>
+          <div id="history-list">
+            <p>ยังไม่มีประวัติการสร้างเว็บไซต์</p>
+          </div>
+        </div>
+
+        <div id="practice-tab" class="tab-content">
+          <h3><i class="fas fa-book"></i> คู่มือการใช้งาน</h3>
+          <p>นี่คือส่วนแนะนำการใช้งานอย่างย่อ:</p>
+
+          <div class="guide-container">
+            <h4><i class="fas fa-list-ol"></i> ขั้นตอนการใช้งาน</h4>
+            <ol class="guide-steps">
+              <li>อัพโหลดไฟล์ที่ต้องการผ่านหน้าต่าง "สร้างเว็บใหม่"</li>
+              <li>
+                กรอกข้อมูล GitHub ของคุณ (ต้องมี Personal Access Token
+                ที่มีสิทธิ์ repo)
+              </li>
+              <li>กดปุ่ม "สร้างเว็บไซต์ทันที" เพื่อ Deploy</li>
+              <li>รอประมาณ 2-5 นาที เพื่อให้ GitHub Pages ทำงานเสร็จสมบูรณ์</li>
+              <li>เข้าชมเว็บไซต์ของคุณผ่าน URL ที่แสดง</li>
+            </ol>
+
+            <h4><i class="fas fa-lightbulb"></i> คำแนะนำเพิ่มเติม</h4>
+            <ul class="guide-tips">
+              <li>ต้องมีไฟล์ index.html เสมอ</li>
+              <li>
+                หากพบปัญหา 404 ให้รอสักครู่ GitHub Pages อาจใช้เวลาในการอัพเดท
+              </li>
+              <li>
+                สามารถดูประวัติเว็บไซต์ที่เคยสร้างไว้ในแท็บ "ประวัติของฉัน"
+              </li>
+            </ul>
+          </div>
+
+          <p>ทดลองทำซ้ำหลายๆ ครั้งเพื่อสร้างความคุ้นเคย</p>
+        </div>
+      </div>
+
+      <div id="file-list-container" class="hidden">
+        <div class="file-list" id="file-list"></div>
+      </div>
+
+      <div id="auth-section" class="hidden">
+        <div class="input-group">
+          <label><i class="fas fa-user"></i> ชื่อผู้ใช้ GitHub</label>
+          <input id="username" placeholder="ชื่อผู้ใช้ของคุณ" />
+        </div>
+
+        <div class="input-group">
+          <label><i class="fas fa-key"></i> GitHub Token (มีสิทธิ์ repo)</label>
+          <div style="position: relative">
+            <input id="token" type="password" placeholder="ghp_..." />
+            <i
+              class="fas fa-eye"
+              id="toggle-password"
+              style="
+                position: absolute;
+                right: 15px;
+                top: 15px;
+                cursor: pointer;
+                color: var(--text-light);
+              "
+              onclick="togglePasswordVisibility()"
+            ></i>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label
+            ><i class="fas fa-code-branch"></i> ชื่อ Repository (ไม่ระบุ =
+            สร้างอัตโนมัติ)</label
+          >
+          <input
+            id="repoName"
+            placeholder="ชื่อ repository ของคุณ (ไม่ซ้ำกับที่มีอยู่)"
+          />
+        </div>
+
+        <div class="collapsible-section">
+          <div class="collapsible-header" onclick="toggleCollapsible(this)">
+            <div><i class="fas fa-globe"></i> ตั้งค่าโดเมนเอง (ไม่บังคับ)</div>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="collapsible-content">
+            <div class="input-group">
+              <label><i class="fas fa-globe"></i> โดเมนของคุณ</label>
+              <input
+                id="customDomain"
+                placeholder="example.com หรือ sub.example.com"
+              />
+              <small
+                style="
+                  color: var(--text-muted);
+                  display: block;
+                  margin-top: 5px;
+                "
+                >ไม่ต้องใส่ http:// หรือ https://</small
+              >
+            </div>
+
+            <div id="domainInstructions" class="domain-section hidden">
+              <h4><i class="fas fa-info-circle"></i> คำแนะนำการตั้งค่าโดเมน</h4>
+              <p>คุณต้องตั้งค่า DNS records ดังต่อไปนี้ให้กับโดเมนของคุณ:</p>
+
+              <div class="dns-records" id="dnsInstructions">
+                <div class="dns-record-item">
+                  <strong>ประเภท:</strong> A<br />
+                  <strong>ชื่อโฮสต์:</strong> @ หรือ ห้วโดเมนย่อย<br />
+                  <strong>ค่า:</strong> 185.199.108.153<br />
+                  <strong>TTL:</strong> Auto หรือ 3600
+                </div>
+                <div class="dns-record-item">
+                  <strong>ประเภท:</strong> A<br />
+                  <strong>ชื่อโฮสต์:</strong> @ หรือ ห้วโดเมนย่อย<br />
+                  <strong>ค่า:</strong> 185.199.109.153<br />
+                  <strong>TTL:</strong> Auto หรือ 3600
+                </div>
+              </div>
+
+              <button class="verify-domain-btn" onclick="verifyDomainSetup()">
+                <i class="fas fa-check-circle"></i> ตรวจสอบสถานะการตั้งค่าโดเมน
+              </button>
+
+              <div id="domainStatus" class="domain-status hidden">
+                <i class="fas fa-spinner fa-spin"></i>
+                กำลังตรวจสอบการตั้งค่าโดเมน...
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="save-credentials">
+          <input type="checkbox" id="saveCredentials" checked disabled />
+          <label for="saveCredentials">จดจำข้อมูลของฉันเสมอ</label>
+        </div>
+
+        <button
+          id="deployBtn"
+          class="one-click-deploy"
+          onclick="oneClickDeploy()"
+        >
+          <span class="text"
+            ><i class="fas fa-bolt"></i> สร้างเว็บไซต์ทันที</span
+          >
+          <span class="spinner"><i class="fas fa-spinner"></i></span>
+        </button>
+      </div>
+
+      <div id="toggle-log-btn" onclick="toggleLog()">
+        <i class="fas fa-terminal"></i> แสดง/ซ่อน บันทึกการทำงาน
+      </div>
+
+      <div id="log">ลากวางไฟล์เพื่อเริ่มการสร้างเว็บไซต์...</div>
+    </div>
+
+    <div id="toast" class="toast">
+      <i class="fas fa-check-circle"></i>
+      <div class="toast-content">
+        <div class="toast-title">สำเร็จ</div>
+        <div class="toast-message">การดำเนินการเสร็จสมบูรณ์</div>
+      </div>
+      <button class="toast-close" onclick="hideToast()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Load saved credentials if available
+        loadSavedCredentials();
+
+        // Load deployment history
+        loadDeploymentHistory();
+
+        // Set up the drag and drop handlers
+        const dropzone = document.getElementById("dropzone");
+        dropzone.addEventListener("dragover", handleDragOver);
+        dropzone.addEventListener("dragleave", handleDragLeave);
+        dropzone.addEventListener("drop", handleDrop);
+
+        // Add touchstart event listeners for better mobile experience
+        const buttons = document.querySelectorAll("button, .tab");
+        buttons.forEach((button) => {
+          button.addEventListener("touchstart", function () {
+            this.style.transform = "scale(0.97)";
+          });
+
+          button.addEventListener("touchend", function () {
+            this.style.transform = "";
+          });
+        });
+
+        // Handle orientation changes
+        window.addEventListener("orientationchange", function () {
+          setTimeout(adjustUIForOrientation, 100);
+        });
+
+        // Initial orientation check
+        adjustUIForOrientation();
+
+        // Add subtle animations to elements when they appear
+        animateElementsOnScroll();
+
+        // Set theme according to saved preference or system preference
+        initializeTheme();
+      });
+
+      // Theme toggling functions
+      function initializeTheme() {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          document.documentElement.setAttribute("data-theme", savedTheme);
+          updateThemeToggleButton(savedTheme);
+        } else {
+          // Check system preference
+          if (
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: light)").matches
+          ) {
+            document.documentElement.setAttribute("data-theme", "light");
+            updateThemeToggleButton("light");
+          }
+        }
+      }
+
+      function toggleTheme() {
+        const currentTheme =
+          document.documentElement.getAttribute("data-theme") || "dark";
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+
+        updateThemeToggleButton(newTheme);
+      }
+
+      function updateThemeToggleButton(theme) {
+        const themeToggle = document.querySelector(".theme-toggle i");
+        if (theme === "dark") {
+          themeToggle.className = "fas fa-moon";
+        } else {
+          themeToggle.className = "fas fa-sun";
+        }
+      }
+
+      // Tab switching functionality
+      function switchTab(tabId) {
+        // Hide all tab contents
+        const tabContents = document.querySelectorAll(".tab-content");
+        tabContents.forEach((tab) => tab.classList.remove("active"));
+
+        // Deactivate all tabs
+        const tabs = document.querySelectorAll(".tab");
+        tabs.forEach((tab) => tab.classList.remove("active"));
+
+        // Activate the selected tab
+        document.getElementById(tabId).classList.add("active");
+
+        // Find and activate the tab button
+        const activeTabButton = Array.from(tabs).find(
+          (tab) => tab.getAttribute("onclick") === `switchTab('${tabId}')`
+        );
+        if (activeTabButton) {
+          activeTabButton.classList.add("active");
+        }
+      }
+
+      // Toggle password visibility
+      function togglePasswordVisibility() {
+        const tokenInput = document.getElementById("token");
+        const toggleIcon = document.getElementById("toggle-password");
+
+        if (tokenInput.type === "password") {
+          tokenInput.type = "text";
+          toggleIcon.className = "fas fa-eye-slash";
+        } else {
+          tokenInput.type = "password";
+          toggleIcon.className = "fas fa-eye";
+        }
+      }
+
+      // Toggle log visibility
+      function toggleLog() {
+        const log = document.getElementById("log");
+        log.classList.toggle("hidden");
+
+        const toggleBtn = document.getElementById("toggle-log-btn");
+        if (log.classList.contains("hidden")) {
+          toggleBtn.innerHTML =
+            '<i class="fas fa-terminal"></i> แสดงบันทึกการทำงาน';
+        } else {
+          toggleBtn.innerHTML =
+            '<i class="fas fa-terminal"></i> ซ่อนบันทึกการทำงาน';
+        }
+      }
+
+      // Drag and drop handlers
+      function handleDragOver(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        this.classList.add("dragover");
+      }
+
+      function handleDragLeave(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        this.classList.remove("dragover");
+      }
+
+      function handleDrop(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        this.classList.remove("dragover");
+
+        let dt = e.dataTransfer;
+        let files = dt.files;
+
+        handleFiles(files);
+      }
+
+      // Fix and improve the handleFiles function for complete file processing
+      function handleFiles(files) {
+        if (!files || files.length === 0) {
+          showToast("ไม่พบไฟล์", "กรุณาเลือกไฟล์ที่ต้องการอัพโหลด", "error");
+          return;
+        }
+
+        const fileList = document.getElementById("file-list");
+        const fileListContainer = document.getElementById(
+          "file-list-container"
+        );
+        fileList.innerHTML = "";
+        fileListContainer.classList.remove("hidden");
+
+        // Check if any files are HTML files
+        let hasHtmlFile = false;
+        const fileArray = Array.from(files);
+
+        fileArray.forEach((file) => {
+          if (file.name.toLowerCase().endsWith(".html")) {
+            hasHtmlFile = true;
+          }
+
+          let iconClass = "fa-file";
+          if (file.name.endsWith(".html")) iconClass = "fa-file-code";
+          else if (file.name.endsWith(".css")) iconClass = "fa-file-code";
+          else if (file.name.endsWith(".js")) iconClass = "fa-file-code";
+          else if (
+            file.name.endsWith(".jpg") ||
+            file.name.endsWith(".jpeg") ||
+            file.name.endsWith(".png") ||
+            file.name.endsWith(".gif") ||
+            file.name.endsWith(".svg") ||
+            file.name.endsWith(".webp")
+          )
+            iconClass = "fa-file-image";
+          else if (
+            file.name.endsWith(".mp3") ||
+            file.name.endsWith(".wav") ||
+            file.name.endsWith(".ogg") ||
+            file.name.endsWith(".m4a")
+          )
+            iconClass = "fa-file-audio";
+          else if (
+            file.name.endsWith(".mp4") ||
+            file.name.endsWith(".webm") ||
+            file.name.endsWith(".avi") ||
+            file.name.endsWith(".mov")
+          )
+            iconClass = "fa-file-video";
+          else if (
+            file.name.endsWith(".pdf") ||
+            file.name.endsWith(".doc") ||
+            file.name.endsWith(".docx")
+          )
+            iconClass = "fa-file-pdf";
+
+          const fileItem = document.createElement("div");
+          fileItem.className = "file-item";
+          fileItem.innerHTML = `
+            <i class="fas ${iconClass} file-icon"></i>
+            <span>${file.name} (${formatFileSize(file.size)})</span>
+          `;
+          fileList.appendChild(fileItem);
+        });
+
+        // Save files in a global variable for later use
+        window.filesToUpload = files;
+
+        // Show warning if no HTML file is found
+        if (!hasHtmlFile) {
+          appendToLog(
+            "คำเตือน: ไม่พบไฟล์ HTML ในการอัพโหลด คุณควรมีไฟล์ index.html เพื่อให้เว็บไซต์แสดงผลได้อย่างถูกต้อง",
+            "fas fa-exclamation-triangle",
+            "warning"
+          );
+        }
+
+        document.getElementById("auth-section").classList.remove("hidden");
+        const log = document.getElementById("log");
+        log.innerHTML = ""; // ล้างข้อความเดิม
+        appendToLog(
+          `พร้อมอัพโหลด ${files.length} ไฟล์`,
+          "fas fa-check",
+          "success"
+        );
+
+        // Get default repository name based on the first HTML file or any first file
+        const htmlFile = fileArray.find((f) =>
+          f.name.toLowerCase().endsWith(".html")
+        );
+        const firstFile = htmlFile || fileArray[0];
+
+        const repoName = generateRepoName(firstFile.name);
+        document.getElementById("repoName").value = repoName;
+
+        // Auto deploy if enabled
+        const autoDeploy = localStorage.getItem("auto-deploy") === "true";
+        const username = document.getElementById("username").value.trim();
+        const token = document.getElementById("token").value.trim();
+
+        if (autoDeploy && username && token) {
+          appendToLog("กำลังอัพโหลดอัตโนมัติ...", "fas fa-upload", "info");
+          setTimeout(() => oneClickDeploy(), 500); // Small delay for better UX
+        }
+      }
+
+      // Helper function to format file size
+      function formatFileSize(bytes) {
+        if (bytes < 1024) return bytes + " bytes";
+        else if (bytes < 1048576) return (bytes / 1024).toFixed(1) + " KB";
+        else return (bytes / 1048576).toFixed(1) + " MB";
+      }
+
+      function generateRepoName(fileName) {
+        const date = new Date();
+        const dateStr = `${date.getFullYear()}${(date.getMonth() + 1)
+          .toString()
+          .padStart(2, "0")}${date.getDate().toString().padStart(2, "0")}`;
+        const timeStr = `${date.getHours().toString().padStart(2, "0")}${date
+          .getMinutes()
+          .toString()
+          .padStart(2, "0")}`;
+
+        // Remove file extension for better repo naming
+        let baseName = fileName.includes(".")
+          ? fileName.substring(0, fileName.lastIndexOf("."))
+          : fileName;
+
+        // Clean the name for repository (remove special chars, spaces, etc)
+        baseName = baseName
+          .replace(/[^\w\-]/g, "-") // replace non-word chars with hyphens
+          .replace(/-+/g, "-") // replace multiple hyphens with a single one
+          .replace(/^-|-$/g, "") // remove leading/trailing hyphens
+          .toLowerCase()
+          .substring(0, 30); // limit length
+
+        if (baseName.toLowerCase().endsWith(".html")) {
+          baseName = baseName.substring(0, baseName.length - 5);
+        }
+
+        if (baseName) {
+          return baseName + "-" + dateStr;
+        } else {
+          return "web-" + dateStr + "-" + timeStr;
+        }
+      }
+
+      // Check if file already exists to get its SHA
+      async function getFileSha(username, repo, path, headers) {
+        try {
+          const response = await fetch(
+            `https://api.github.com/repos/${username}/${repo}/contents/${path}`,
+            { headers }
+          );
+          if (response.ok) {
+            const data = await response.json();
+            return data.sha;
+          }
+          return null;
+        } catch (error) {
+          return null;
+        }
+      }
+
+      // Improved file upload function to better handle binary files
+      async function uploadFile(file, username, repo, headers, maxRetries = 3) {
+        return new Promise(async (resolve, reject) => {
+          try {
+            let content;
+            let isBinary = false;
+
+            // Check if file is binary
+            const binaryTypes = [
+              "image/",
+              "audio/",
+              "video/",
+              "application/octet-stream",
+              "application/pdf",
+              "application/zip",
+              "application/x-zip",
+              "application/x-zip-compressed",
+            ];
+
+            if (
+              binaryTypes.some((type) => file.type.startsWith(type)) ||
+              (!file.type.includes("text/") &&
+                !file.name.match(/\.(html|css|js|json|xml|md|txt)$/i))
+            ) {
+              isBinary = true;
+              content = await readFileAsArrayBuffer(file);
+            } else {
+              content = await readFileAsText(file);
+            }
+
+            const encoded = isBinary
+              ? arrayBufferToBase64(content)
+              : btoa(unescape(encodeURIComponent(content)));
+
+            const path = file.name;
+
+            for (let attempt = 0; attempt < maxRetries; attempt++) {
+              try {
+                // Check if file already exists to get its SHA
+                const sha = await getFileSha(username, repo, path, headers);
+                const body = {
+                  message: `อัพโหลด ${path}`,
+                  content: encoded,
+                  branch: "main",
+                };
+
+                // If file exists, include SHA for update
+                if (sha) body.sha = sha;
+
+                const uploadRes = await fetch(
+                  `https://api.github.com/repos/${username}/${repo}/contents/${path}`,
+                  {
+                    method: "PUT",
+                    headers,
+                    body: JSON.stringify(body),
+                  }
+                );
+
+                if (uploadRes.ok) {
+                  return resolve(file.name);
+                }
+
+                const error = await uploadRes.json();
+                if (error.message && error.message.includes("but expected")) {
+                  // This is a race condition error, retry
+                  if (attempt < maxRetries - 1) {
+                    await new Promise((r) => setTimeout(r, 1000));
+                    continue;
+                  }
+                }
+
+                reject(new Error(`ไม่สามารถอัพโหลดได้: ${error.message}`));
+                break;
+              } catch (err) {
+                if (attempt === maxRetries - 1) {
+                  reject(
+                    new Error(
+                      `อัพโหลด ${file.name} ไม่สำเร็จ: ${
+                        err.message || "ไม่ทราบสาเหตุ"
+                      }`
+                    )
+                  );
+                }
+              }
+            }
+          } catch (error) {
+            reject(
+              new Error(
+                `อัพโหลด ${file.name} ไม่สำเร็จ: ${
+                  error.message || "ไม่ทราบสาเหตุ"
+                }`
+              )
+            );
+          }
+        });
+      }
+
+      // Add function to read binary files
+      function readFileAsArrayBuffer(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = function (event) {
+            resolve(event.target.result);
+          };
+          reader.onerror = function (error) {
+            reject(error);
+          };
+          reader.readAsArrayBuffer(file);
+        });
+      }
+
+      function arrayBufferToBase64(buffer) {
+        let binary = "";
+        const bytes = new Uint8Array(buffer);
+        const len = bytes.byteLength;
+
+        for (let i = 0; i < len; i++) {
+          binary += String.fromCharCode(bytes[i]);
+        }
+
+        return btoa(binary);
+      }
+
+      function readFileAsText(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = function (event) {
+            resolve(event.target.result);
+          };
+          reader.onerror = function (error) {
+            reject(error);
+          };
+          reader.readAsText(file);
+        });
+      }
+
+      // Load saved credentials from localStorage - modified to always enable auto-deploy
+      function loadSavedCredentials() {
+        const username = localStorage.getItem("github-username");
+        const token = localStorage.getItem("github-token");
+
+        if (username) {
+          document.getElementById("username").value = username;
+        }
+
+        if (token) {
+          document.getElementById("token").value = token;
+        }
+
+        // Always enable auto-deploy
+        localStorage.setItem("auto-deploy", "true");
+        document.getElementById("saveCredentials").checked = true;
+      }
+
+      // Save credentials to localStorage - modified to always save
+      function saveCredentials() {
+        const username = document.getElementById("username").value.trim();
+        const token = document.getElementById("token").value.trim();
+
+        // Always save credentials, regardless of checkbox state
+        if (username) localStorage.setItem("github-username", username);
+        if (token) localStorage.setItem("github-token", token);
+        localStorage.setItem("auto-deploy", "true");
+      }
+
+      // Load deployment history
+      function loadDeploymentHistory() {
+        try {
+          const history =
+            JSON.parse(localStorage.getItem("deployment-history")) || [];
+          const historyList = document.getElementById("history-list");
+
+          if (history.length === 0) {
+            historyList.innerHTML = "<p>ยังไม่มีประวัติการสร้างเว็บไซต์</p>";
+            return;
+          }
+
+          historyList.innerHTML = "";
+
+          history.forEach((site) => {
+            const historyItem = document.createElement("div");
+            historyItem.className = "history-item";
+
+            // Add custom domain info if available
+            const domainInfo = site.customDomain
+              ? `<div class="site-domain"><i class="fas fa-check-circle" style="color: var(--success);"></i> โดเมนที่ตั้งค่า: ${site.customDomain}</div>`
+              : "";
+
+            historyItem.innerHTML = `
+              <div class="site-info">
+                <div class="site-name">${site.repoName}</div>
+                <div class="site-url">${site.siteUrl}</div>
+                ${domainInfo}
+                <div class="site-date">${new Date(site.date).toLocaleString(
+                  "th-TH"
+                )}</div>
+              </div>
+              <div class="actions">
+                <button class="btn visit-btn" onclick="window.open('${
+                  site.siteUrl
+                }', '_blank')">
+                  <i class="fas fa-external-link-alt"></i> เข้าชม
+                </button>
+                <button class="btn update-btn" onclick="prepareUpdate('${
+                  site.username
+                }', '${site.repoName}', '${site.customDomain || ""}')">
+                  <i class="fas fa-sync-alt"></i> อัพเดท
+                </button>
+              </div>
+            `;
+            historyList.appendChild(historyItem);
+          });
+        } catch (error) {
+          console.error("Error loading deployment history:", error);
+        }
+      }
+
+      // Save deployment to history
+      function saveDeploymentToHistory(
+        username,
+        repoName,
+        siteUrl,
+        customDomain = null
+      ) {
+        try {
+          const history =
+            JSON.parse(localStorage.getItem("deployment-history")) || [];
+
+          // Check if this deployment already exists, update it if it does
+          const existingIndex = history.findIndex(
+            (item) => item.username === username && item.repoName === repoName
+          );
+
+          const deploymentInfo = {
+            username,
+            repoName,
+            siteUrl,
+            customDomain,
+            date: new Date().toISOString(),
+          };
+
+          if (existingIndex !== -1) {
+            history[existingIndex] = deploymentInfo;
+          } else {
+            // Add to beginning of array
+            history.unshift(deploymentInfo);
+          }
+
+          // Keep only the latest 10 deployments
+          const trimmedHistory = history.slice(0, 10);
+          localStorage.setItem(
+            "deployment-history",
+            JSON.stringify(trimmedHistory)
+          );
+
+          // Refresh the history display
+          loadDeploymentHistory();
+        } catch (error) {
+          console.error("Error saving deployment history:", error);
+        }
+      }
+
+      // Prepare for updating an existing site
+      function prepareUpdate(username, repoName, customDomain = "") {
+        document.getElementById("username").value = username;
+        document.getElementById("repoName").value = repoName;
+
+        // If custom domain exists, set it and show instructions
+        if (customDomain) {
+          const customDomainInput = document.getElementById("customDomain");
+          customDomainInput.value = customDomain;
+
+          // Trigger the input event to show domain instructions
+          const inputEvent = new Event("input", {
+            bubbles: true,
+            cancelable: true,
+          });
+          customDomainInput.dispatchEvent(inputEvent);
+
+          // Open the collapsible section
+          const collapsibleHeader = document.querySelector(
+            ".collapsible-header"
+          );
+          if (collapsibleHeader) {
+            const content = collapsibleHeader.nextElementSibling;
+            if (!content.classList.contains("open")) {
+              toggleCollapsible(collapsibleHeader);
+            }
+          }
+        }
+
+        switchTab("new-tab");
+
+        appendToLog(
+          `กำลังเตรียมอัพเดทเว็บไซต์: ${repoName}${
+            customDomain ? " กับโดเมน " + customDomain : ""
+          }`,
+          "fas fa-info-circle",
+          "info"
+        );
+        document.getElementById("fileInput").click();
+      }
+
+      // Toggle collapsible sections
+      function toggleCollapsible(element) {
+        const content = element.nextElementSibling;
+        content.classList.toggle("open");
+
+        const icon = element.querySelector(".fa-chevron-down, .fa-chevron-up");
+        if (content.classList.contains("open")) {
+          icon.classList.replace("fa-chevron-down", "fa-chevron-up");
+        } else {
+          icon.classList.replace("fa-chevron-up", "fa-chevron-down");
+        }
+      }
+
+      // Show domain setup instructions when domain is entered
+      document
+        .getElementById("customDomain")
+        .addEventListener("input", function () {
+          const domainInstructions =
+            document.getElementById("domainInstructions");
+          if (this.value.trim()) {
+            domainInstructions.classList.remove("hidden");
+            updateDNSInstructions(this.value.trim());
+          } else {
+            domainInstructions.classList.add("hidden");
+          }
+        });
+
+      // Update DNS instructions based on domain type
+      function updateDNSInstructions(domain) {
+        const isDomainRoot = domain.split(".").length === 2;
+        const dnsInstructions = document.getElementById("dnsInstructions");
+
+        if (isDomainRoot) {
+          // Root domain (example.com)
+          dnsInstructions.innerHTML = `
+            <div class="dns-record-item">
+              <strong>ประเภท:</strong> A<br>
+              <strong>ชื่อโฮสต์:</strong> @<br>
+              <strong>ค่า:</strong> 185.199.108.153<br>
+              <strong>TTL:</strong> Auto หรือ 3600
+            </div>
+            <div class="dns-record-item">
+              <strong>ประเภท:</strong> A<br>
+              <strong>ชื่อโฮสต์:</strong> @<br>
+              <strong>ค่า:</strong> 185.199.109.153<br>
+              <strong>TTL:</strong> Auto หรือ 3600
+            </div>
+            <div class="dns-record-item">
+              <strong>ประเภท:</strong> A<br>
+              <strong>ชื่อโฮสต์:</strong> @<br>
+              <strong>ค่า:</strong> 185.199.110.153<br>
+              <strong>TTL:</strong> Auto หรือ 3600
+            </div>
+            <div class="dns-record-item">
+              <strong>ประเภท:</strong> A<br>
+              <strong>ชื่อโฮสต์:</strong> @<br>
+              <strong>ค่า:</strong> 185.199.111.153<br>
+              <strong>TTL:</strong> Auto หรือ 3600
+            </div>
+          `;
+        } else {
+          // Subdomain (sub.example.com)
+          const subdomain = domain.split(".")[0];
+          dnsInstructions.innerHTML = `
+            <div class="dns-record-item">
+              <strong>ประเภท:</strong> CNAME<br>
+              <strong>ชื่อโฮสต์:</strong> ${subdomain}<br>
+              <strong>ค่า:</strong> <span id="cnameValue">ยังไม่มีข้อมูล (จะได้หลังจากอัพโหลดเสร็จ)</span><br>
+              <strong>TTL:</strong> Auto หรือ 3600
+            </div>
+          `;
+        }
+      }
+
+      // Verify domain DNS setup
+      async function verifyDomainSetup() {
+        const domain = document.getElementById("customDomain").value.trim();
+        if (!domain) return;
+
+        const domainStatus = document.getElementById("domainStatus");
+        domainStatus.className = "domain-status pending";
+        domainStatus.innerHTML =
+          '<i class="fas fa-spinner fa-spin"></i> กำลังตรวจสอบการตั้งค่าโดเมน...';
+        domainStatus.classList.remove("hidden");
+
+        try {
+          // Simple ping to check if domain resolves
+          const verifyResponse = await fetch(`https://dns-api.org/A/${domain}`);
+          const dnsData = await verifyResponse.json();
+
+          if (dnsData && Array.isArray(dnsData) && dnsData.length > 0) {
+            const githubIPs = [
+              "185.199.108.153",
+              "185.199.109.153",
+              "185.199.110.153",
+              "185.199.111.153",
+            ];
+            const isCorrect = dnsData.some((record) =>
+              githubIPs.includes(record.value)
+            );
+
+            if (isCorrect) {
+              domainStatus.className = "domain-status success";
+              domainStatus.innerHTML =
+                '<i class="fas fa-check-circle"></i> โดเมนตั้งค่าถูกต้องแล้ว สามารถดำเนินการต่อได้';
+            } else {
+              domainStatus.className = "domain-status error";
+              domainStatus.innerHTML =
+                '<i class="fas fa-exclamation-circle"></i> ตั้งค่า DNS ยังไม่ถูกต้อง โปรดตรวจสอบ IP ที่ชี้ไป';
+            }
+          } else {
+            domainStatus.className = "domain-status error";
+            domainStatus.innerHTML =
+              '<i class="fas fa-exclamation-circle"></i> ไม่พบการตั้งค่า DNS สำหรับโดเมนนี้ หรือยังไม่อัพเดท';
+          }
+        } catch (error) {
+          domainStatus.className = "domain-status error";
+          domainStatus.innerHTML =
+            '<i class="fas fa-exclamation-circle"></i> ไม่สามารถตรวจสอบโดเมนได้ โปรดลองอีกครั้งในภายหลัง';
+          console.error("Domain verification error:", error);
+        }
+      }
+
+      // Create CNAME file for custom domain
+      async function createCNAMEFile(domain) {
+        if (!domain) return null;
+
+        // Create a new file object with the domain as content
+        const file = new File([domain], "CNAME", {
+          type: "text/plain",
+        });
+
+        return file;
+      }
+
+      // One-click deploy function - modified to support custom domains
+      async function oneClickDeploy() {
+        try {
+          const deployBtn = document.getElementById("deployBtn");
+          deployBtn.classList.add("loading");
+
+          const username = document.getElementById("username").value.trim();
+          const token = document.getElementById("token").value.trim();
+          let repoName = document.getElementById("repoName").value.trim();
+          const customDomain = document
+            .getElementById("customDomain")
+            .value.trim();
+
+          if (!username || !token) {
+            showToast(
+              "ข้อมูลไม่ครบ",
+              "กรุณากรอกชื่อผู้ใช้และ GitHub Token",
+              "error"
+            );
+            deployBtn.classList.remove("loading");
+            return;
+          }
+
+          if (!window.filesToUpload || window.filesToUpload.length === 0) {
+            showToast(
+              "ไม่พบไฟล์",
+              "กรุณาเลือกไฟล์ที่ต้องการอัพโหลดก่อน",
+              "error"
+            );
+            deployBtn.classList.remove("loading");
+            return;
+          }
+
+          // Always save credentials
+          saveCredentials();
+
+          // Set up headers for GitHub API
+          const headers = {
+            Authorization: `token ${token}`,
+            Accept: "application/vnd.github.v3+json",
+            "Content-Type": "application/json",
+          };
+
+          // If repo name is not provided, generate one
+          if (!repoName) {
+            const firstFile = window.filesToUpload[0];
+            repoName = generateRepoName(firstFile.name);
+          }
+
+          appendToLog(
+            `กำลังตรวจสอบ repository: ${repoName}`,
+            "fas fa-search",
+            "info"
+          );
+
+          // Check if repo exists
+          let repoExists = false;
+          try {
+            const repoCheck = await fetch(
+              `https://api.github.com/repos/${username}/${repoName}`,
+              {
+                headers,
+              }
+            );
+            repoExists = repoCheck.ok;
+          } catch (error) {
+            // Repo doesn't exist, will create a new one
+          }
+
+          // Create repo if it doesn't exist
+          if (!repoExists) {
+            try {
+              appendToLog(
+                `กำลังสร้าง repository ใหม่: ${repoName}`,
+                "fas fa-plus-circle",
+                "info"
+              );
+
+              const createRepo = await fetch(
+                "https://api.github.com/user/repos",
+                {
+                  method: "POST",
+                  headers,
+                  body: JSON.stringify({
+                    name: repoName,
+                    description: "Created with เติมตลอด ปอดวิเศษ",
+                    auto_init: true,
+                    private: false,
+                  }),
+                }
+              );
+
+              if (!createRepo.ok) {
+                const error = await createRepo.json();
+                throw new Error(`สร้าง repository ไม่สำเร็จ: ${error.message}`);
+              }
+
+              appendToLog(`สร้าง repository สำเร็จ`, "fas fa-check", "success");
+
+              // Wait a moment for the repo to initialize
+              await new Promise((resolve) => setTimeout(resolve, 2000));
+            } catch (error) {
+              appendToLog(
+                `ข้อผิดพลาด: ${error.message}`,
+                "fas fa-exclamation-circle",
+                "error"
+              );
+              deployBtn.classList.remove("loading");
+              return;
+            }
+          } else {
+            appendToLog(
+              `พบ repository ${repoName} จะทำการอัพเดท`,
+              "fas fa-sync-alt",
+              "info"
+            );
+          }
+
+          // Prepare files for upload including CNAME if custom domain specified
+          let filesToUpload = Array.from(window.filesToUpload);
+
+          if (customDomain) {
+            appendToLog(
+              `กำลังเตรียมไฟล์ CNAME สำหรับโดเมน: ${customDomain}`,
+              "fas fa-globe",
+              "info"
+            );
+
+            const cnameFile = await createCNAMEFile(customDomain);
+            if (cnameFile) {
+              filesToUpload.push(cnameFile);
+            }
+          }
+
+          // Upload files
+          appendToLog(`กำลังอัพโหลดไฟล์...`, "fas fa-upload", "info");
+
+          const filePromises = filesToUpload.map((file) =>
+            uploadFile(file, username, repoName, headers)
+          );
+
+          let results;
+          try {
+            results = await Promise.allSettled(filePromises);
+          } catch (error) {
+            appendToLog(
+              `ข้อผิดพลาด: ${error.message}`,
+              "fas fa-exclamation-circle",
+              "error"
+            );
+            deployBtn.classList.remove("loading");
+            return;
+          }
+
+          // Process results
+          const successCount = results.filter(
+            (r) => r.status === "fulfilled"
+          ).length;
+          const failCount = results.filter(
+            (r) => r.status === "rejected"
+          ).length;
+
+          appendToLog(
+            `อัพโหลดสำเร็จ ${successCount} ไฟล์, ล้มเหลว ${failCount} ไฟล์`,
+            successCount > 0 ? "fas fa-check-circle" : "fas fa-times-circle",
+            successCount > 0 ? "success" : "error"
+          );
+
+          // Configure GitHub Pages with custom domain if specified
+          if (successCount > 0) {
+            try {
+              appendToLog(
+                `กำลังเปิดใช้งาน GitHub Pages...`,
+                "fas fa-cog",
+                "info"
+              );
+
+              const pagesSettingsBody = {
+                source: {
+                  branch: "main",
+                },
+              };
+
+              // Add custom domain if specified
+              if (customDomain) {
+                pagesSettingsBody.cname = customDomain;
+                pagesSettingsBody.custom_domain = customDomain;
+              }
+
+              const pagesSettings = await fetch(
+                `https://api.github.com/repos/${username}/${repoName}/pages`,
+                {
+                  method: "POST",
+                  headers,
+                  body: JSON.stringify(pagesSettingsBody),
+                }
+              );
+
+              // For existing repos, might need to use PUT to update
+              if (
+                !pagesSettings.ok &&
+                (pagesSettings.status === 422 || pagesSettings.status === 404)
+              ) {
+                const updatePagesSettings = await fetch(
+                  `https://api.github.com/repos/${username}/${repoName}/pages`,
+                  {
+                    method: "PUT",
+                    headers,
+                    body: JSON.stringify(pagesSettingsBody),
+                  }
+                );
+
+                if (updatePagesSettings.ok) {
+                  appendToLog(
+                    `อัพเดท GitHub Pages สำเร็จ`,
+                    "fas fa-check",
+                    "success"
+                  );
+                }
+              } else if (pagesSettings.ok) {
+                appendToLog(
+                  `เปิดใช้งาน GitHub Pages สำเร็จ`,
+                  "fas fa-check",
+                  "success"
+                );
+              }
+            } catch (error) {
+              console.warn("Error configuring GitHub Pages:", error);
+              // Continue anyway, as the files can still be uploaded
+            }
+
+            let siteUrl = "";
+
+            if (customDomain) {
+              siteUrl = `https://${customDomain}/`;
+              appendToLog(
+                `เว็บไซต์ของคุณจะพร้อมใช้งานที่ ${siteUrl} หลังจาก DNS อัพเดทสมบูรณ์`,
+                "fas fa-globe",
+                "success"
+              );
+
+              // Update CNAME display in DNS instructions if it's a subdomain
+              if (customDomain.split(".").length > 2) {
+                const cnameValue = document.getElementById("cnameValue");
+                if (cnameValue) {
+                  cnameValue.textContent = `${username}.github.io`;
+                }
+              }
+
+              appendToLog(
+                `คุณสามารถเข้าถึงเว็บไซต์ได้จาก URL สำรองที่ https://${username}.github.io/${repoName}/`,
+                "fas fa-link",
+                "info"
+              );
+            } else {
+              siteUrl = `https://${username}.github.io/${repoName}/`;
+              appendToLog(
+                `เว็บไซต์ของคุณจะพร้อมใช้งานใน 1-5 นาที ที่ ${siteUrl}`,
+                "fas fa-globe",
+                "success"
+              );
+            }
+
+            // Add site URL display
+            const urlDisplay = document.createElement("div");
+            urlDisplay.className = "site-url-display";
+            urlDisplay.innerHTML = `
+              <i class="fas fa-globe" style="color: var(--primary); font-size: 1.2rem;"></i>
+              <a href="${siteUrl}" target="_blank">${siteUrl}</a>
+              <button class="copy-btn" onclick="copyToClipboard('${siteUrl}')">
+                <i class="fas fa-copy"></i> คัดลอก
+              </button>
+            `;
+
+            // Insert before the log toggle button
+            const toggleLogBtn = document.getElementById("toggle-log-btn");
+            toggleLogBtn.parentNode.insertBefore(urlDisplay, toggleLogBtn);
+
+            // Save to deployment history with custom domain info if applicable
+            saveDeploymentToHistory(username, repoName, siteUrl, customDomain);
+
+            // Show toast
+            showToast(
+              "อัพโหลดสำเร็จ",
+              customDomain
+                ? "เว็บไซต์กำลังจัดเตรียมให้พร้อมใช้งาน รอ DNS อัพเดท"
+                : "เว็บไซต์กำลังจัดเตรียมให้พร้อมใช้งาน",
+              "success"
+            );
+          }
+
+          deployBtn.classList.remove("loading");
+        } catch (error) {
+          appendToLog(
+            `ข้อผิดพลาด: ${error.message}`,
+            "fas fa-exclamation-circle",
+            "error"
+          );
+          document.getElementById("deployBtn").classList.remove("loading");
+        }
+      }
+
+      // Copy URL to clipboard
+      function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(
+          function () {
+            showToast("คัดลอกสำเร็จ", "คัดลอก URL ไปยังคลิปบอร์ด", "success");
+          },
+          function (err) {
+            console.error("Could not copy text: ", err);
+          }
+        );
+      }
+
+      // Toast notification system
+      function showToast(title, message, type = "success") {
+        const toast = document.getElementById("toast");
+        const toastTitle = toast.querySelector(".toast-title");
+        const toastMessage = toast.querySelector(".toast-message");
+        const toastIcon = toast.querySelector("i");
+
+        toast.className = "toast";
+        toast.classList.add(type);
+
+        toastTitle.textContent = title;
+        toastMessage.textContent = message;
+
+        if (type === "success") {
+          toastIcon.className = "fas fa-check-circle";
+        } else if (type === "error") {
+          toastIcon.className = "fas fa-exclamation-circle";
+        }
+
+        toast.classList.add("show");
+
+        // Hide after 5 seconds
+        setTimeout(() => {
+          hideToast();
+        }, 5000);
+      }
+
+      function hideToast() {
+        const toast = document.getElementById("toast");
+        toast.classList.remove("show");
+      }
+
+      // Log entry with styled formatting
+      function appendToLog(
+        message,
+        icon = "fas fa-info-circle",
+        type = "info"
+      ) {
+        const log = document.getElementById("log");
+        const entry = document.createElement("div");
+        entry.className = `log-entry ${type}`;
+        entry.innerHTML = `
+          <i class="${icon}"></i>
+          <div class="log-entry-text">${message}</div>
+        `;
+
+        log.appendChild(entry);
+        log.scrollTop = log.scrollHeight;
+
+        // Also log to console for debugging
+        console.log(`${type.toUpperCase()}: ${message}`);
+      }
+
+      // Adjust UI for different orientations
+      function adjustUIForOrientation() {
+        const isLandscape = window.innerWidth > window.innerHeight;
+        const isMobile = window.innerWidth < 768;
+
+        if (isMobile) {
+          if (isLandscape) {
+            document.body.style.padding = "0.5rem";
+          } else {
+            document.body.style.padding = "1rem";
+          }
+        }
+      }
+
+      // Add subtle animations to elements when they appear
+      function animateElementsOnScroll() {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+          }
+        );
+
+        const animateElements = document.querySelectorAll(
+          ".dropzone, .input-group, button, .file-list, .guide-container"
+        );
+
+        animateElements.forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(20px)";
+          el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+          observer.observe(el);
+        });
+      }
+
+      // Function to toggle deploy mode (new site or update)
+      function toggleDeployMode(mode) {
+        if (mode === "update") {
+          // Show history and let user select a site to update
+          switchTab("history-tab");
+        }
+      }
+    </script>
+  </body>
+</html>
